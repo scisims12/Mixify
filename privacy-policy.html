@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mixify — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #0f0c1a;
+    --card: #1a1530;
+    --accent: #8b6ff0;
+    --accent-light: #b9a3ff;
+    --text: #e8e4f5;
+    --text-dim: #a89fc4;
+    --border: #2e2650;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #0f0c1a 0%, #150f28 100%);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--accent) 0%, #5b3fc4 100%);
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+  }
+  h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 15px;
+  }
+  .updated {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 19px;
+    color: var(--accent-light);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: rgba(139, 111, 240, 0.18);
+    color: var(--accent-light);
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  p, li {
+    color: var(--text);
+    font-size: 15px;
+  }
+  ul {
+    margin: 10px 0 0;
+    padding-left: 20px;
+  }
+  li { margin-bottom: 8px; }
+  li:last-child { margin-bottom: 0; }
+  strong { color: var(--accent-light); }
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    background: rgba(139, 111, 240, 0.15);
+    color: var(--accent-light);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  footer a { color: var(--text-dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-badge">M</div>
+    <h1>Mixify — Privacy Policy</h1>
+    <div class="subtitle">Your music, your business. Here's exactly what happens with your data.</div>
+    <div class="updated">Last updated: September 2026</div>
+  </header>
+
+  <div class="card">
+    <h2><span class="num">1</span>Overview</h2>
+    <p>
+      Mixify is a music player app that lets you search, stream, and organize music.
+      This page explains what information the app accesses, what it stores, and what
+      (if anything) leaves your device. Mixify is developed independently and is not
+      affiliated with YouTube, Google, or any official streaming service.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">2</span>Account Login (Optional)</h2>
+    <p>
+      Mixify offers an <strong>optional</strong> sign-in feature that lets you connect
+      your YouTube Music account to access personal playlists, likes, and history from
+      that account.
+    </p>
+    <ul>
+      <li>Login is <strong>never required</strong> to use the app — search, playback, and local library features work without signing in.</li>
+      <li>If you choose to log in, authentication data (such as session cookies) is sent directly to YouTube's own servers to authenticate you — Mixify does not operate its own login servers and does not collect or store your account credentials.</li>
+      <li>Login tokens/cookies are stored <strong>locally on your device only</strong>, used solely to keep you signed in.</li>
+      <li>You can log out at any time from Settings, which clears this locally stored data.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">3</span>Search History &amp; Local Data</h2>
+    <p>
+      Your search history, liked songs, playlists, and playback preferences are stored
+      <strong>locally on your device</strong> in the app's own database. This data is
+      never transmitted to any external server and is not accessible to the developer.
+      You can clear this data at any time by clearing the app's storage/cache from your
+      device settings, or using in-app options where available.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">4</span>Listen Together Feature</h2>
+    <p>
+      The "Listen Together" feature allows you to sync playback with friends in real time
+      using a room code, via a WebSocket connection to a listen-together server.
+    </p>
+    <ul>
+      <li>When using this feature, information required to sync playback (such as the current track, playback position, and a temporary username you choose) is relayed through the connected server so other participants in the room can stay in sync.</li>
+      <li>This data is <strong>not stored</strong> beyond the active session — it is not logged, saved to a database, or used for any purpose other than real-time playback synchronization.</li>
+      <li>You can view or change the server used for this feature in Settings → Listen Together.</li>
+      <li>If you are not actively using Listen Together, no data related to this feature is sent anywhere.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">5</span>Streaming &amp; Playback Data</h2>
+    <p>
+      To search for and play music, Mixify communicates directly with YouTube Music's
+      public services to fetch song information and audio streams. This is the same
+      type of request your device would make when using YouTube Music in a browser.
+      Standard network information (such as your IP address) may be visible to YouTube
+      as part of these requests, the same as with any music/video streaming service.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">6</span>Analytics &amp; Crash Reporting</h2>
+    <p>
+      Mixify does <strong>not</strong> use any third-party analytics or advertising SDKs
+      to track your behavior. The app may use standard crash-reporting tools solely to
+      help identify and fix bugs; if enabled, this only includes technical information
+      such as error logs and app version — never your personal music activity or
+      account information.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">7</span>Data Sharing</h2>
+    <p>
+      Mixify does <strong>not</strong> sell, rent, or share your personal data with
+      advertisers or third parties. Any data exchanged is limited strictly to what's
+      necessary for the app's features to function, as described above (YouTube Music
+      for streaming, and the Listen Together server only when that feature is actively used).
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">8</span>Your Choices</h2>
+    <ul>
+      <li>Use the app entirely without logging in.</li>
+      <li>Clear locally stored history/data anytime via device or in-app settings.</li>
+      <li>Avoid using Listen Together if you don't want playback data relayed through a server.</li>
+      <li>Uninstalling the app removes all locally stored data.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">9</span>Changes to This Policy</h2>
+    <p>
+      This privacy policy may be updated as the app's features evolve. Continued use of
+      Mixify after changes are posted here constitutes acceptance of the updated policy.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">10</span>Contact</h2>
+    <p>
+      For questions about this privacy policy or the app, please open an issue on the
+      project's GitHub repository.
+    </p>
+  </div>
+
+  <footer>
+    Mixify — an independent music player app · Not affiliated with YouTube or Google
+  </footer>
+
+</div>
+</body>
+</html>
