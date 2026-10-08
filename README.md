@@ -111,3 +111,24 @@
 </table>
 
 </div>
+---
+
+<div align="center">
+
+<h1 id="download-now">Download Now</h1>
+
+<h3>Get the latest stable version of Mixify for Android</h3>
+
+<br/>
+
+<a href="https://github.com/scisims12/Mixify/releases/latest">
+  <img src="https://img.shields.io/badge/Download-Latest%20Release-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Download Mixify">
+</a>
+
+<br/><br/>
+
+<a href="https://github.com/scisims12/Mixify/releases">
+  View all releases
+</a>
+
+</div>
