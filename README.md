@@ -504,9 +504,6 @@ If you enjoy Mixify, you can support the project by:
       <td align="center"><a href="https://better-lyrics.boidu.dev"><strong>Better Lyrics</strong></a></td>
       <td>Time-synced lyrics with word-by-word highlighting &amp; YouTube Music integration</td>
     </tr>
-    <tr>
-      
-    </tr>
     <!--
     Uncomment a row below only if Mixify actually uses it:
     <tr>
