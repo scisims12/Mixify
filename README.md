@@ -35,3 +35,79 @@
 <img src="assets/screenshots/mix.png" width="30%" />
 
 </div>
+
+---
+
+<div align="center">
+
+<h1 id="features">Features</h1>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+#### 🎧 Playback
+- Fast and smooth music playback
+- Background playback
+- Queue management
+- Offline playback
+- Premium audio quality
+
+</td>
+    <td width="50%" valign="top">
+
+#### 🎤 Lyrics
+- Smart lyrics experience
+- Synced lyrics
+- Clean lyrics interface
+- Easy lyrics access from player
+
+</td>
+  </tr>
+
+  <tr>
+    <td width="50%" valign="top">
+
+#### 📚 Library & Playlists
+- Playlist management
+- Favourite songs
+- Easy library organization
+- Recently played music
+- Quick access to saved content
+
+</td>
+    <td width="50%" valign="top">
+
+#### 🔍 Search & Discovery
+- Fast music search
+- Discover new music
+- Browse songs and playlists
+- Simple and clean search experience
+
+</td>
+  </tr>
+
+  <tr>
+    <td width="50%" valign="top">
+
+#### 👥 Listen Together
+- Listen with friends
+- Shared listening experience
+- Simple session-based playback
+- Designed for social music listening
+
+</td>
+    <td width="50%" valign="top">
+
+#### 🎨 Interface
+- Modern Android design
+- Clean dark interface
+- Smooth navigation
+- Simple playback controls
+- Mobile-friendly layout
+
+</td>
+  </tr>
+</table>
+
+</div>
