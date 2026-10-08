@@ -8,15 +8,22 @@
 
 <br/>
 
-[![Latest release](https://img.shields.io/github/v/release/scisims12/Mixify?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases)
-
+[![Latest Release](https://img.shields.io/github/v/release/scisims12/Mixify?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases)
+[![Android](https://img.shields.io/badge/Android-App-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117)](#)
+
+<br/>
+
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117)](https://t.me/mixify20)
 
 <br/>
 
 [**Download**](#download-now) ·
 [**Features**](#features) ·
-[**Screenshots**](#screenshots)
+[**Screenshots**](#screenshots) ·
+[**Installation**](#installation) ·
+[**FAQ**](#faq) ·
+[**Telegram**](https://t.me/mixify20)
 
 </div>
 
@@ -24,15 +31,15 @@
 
 <div align="center">
 
-<h1 id="screenshots">Screenshots</h1>
+## About Mixify
 
-<img src="assets/screenshots/home.png" width="30%" />
-<img src="assets/screenshots/search.png" width="30%" />
-<img src="assets/screenshots/player.png" width="30%" />
+**Mixify** is a modern Android music application designed for a fast, smooth and enjoyable listening experience.
 
-<img src="assets/screenshots/lyrics.png" width="30%" />
-<img src="assets/screenshots/queue.png" width="30%" />
-<img src="assets/screenshots/mix.png" width="30%" />
+It brings together music playback, smart lyrics, offline listening, playlist management, queue controls, search, and social listening features inside one clean and modern interface.
+
+Mixify focuses on:
+
+**Fast Playback · Smart Lyrics · Offline Music · Premium Quality · Listen Together**
 
 </div>
 
@@ -40,13 +47,36 @@
 
 <div align="center">
 
-<h1 id="features">Features</h1>
+# Screenshots
+
+<a id="screenshots"></a>
+
+<img src="assets/screenshots/home.png" alt="Mixify Home" width="30%" />
+<img src="assets/screenshots/search.png" alt="Mixify Search" width="30%" />
+<img src="assets/screenshots/player.png" alt="Mixify Player" width="30%" />
+
+<br/>
+
+<img src="assets/screenshots/lyrics.png" alt="Mixify Lyrics" width="30%" />
+<img src="assets/screenshots/queue.png" alt="Mixify Queue" width="30%" />
+<img src="assets/screenshots/mix.png" alt="Mixify Mix" width="30%" />
+
+</div>
+
+---
+
+<div align="center">
+
+# Features
+
+<a id="features"></a>
 
 <table>
   <tr>
     <td width="50%" valign="top">
 
-#### 🎧 Playback
+### 🎧 Playback
+
 - Fast and smooth music playback
 - Background playback
 - Queue management
@@ -54,13 +84,15 @@
 - Premium audio quality
 
 </td>
-    <td width="50%" valign="top">
 
-#### 🎤 Lyrics
+<td width="50%" valign="top">
+
+### 🎤 Smart Lyrics
+
 - Smart lyrics experience
-- Synced lyrics
+- Synced lyrics support
 - Clean lyrics interface
-- Easy lyrics access from player
+- Easy access from the player
 
 </td>
   </tr>
@@ -68,21 +100,25 @@
   <tr>
     <td width="50%" valign="top">
 
-#### 📚 Library & Playlists
+### 📚 Library & Playlists
+
 - Playlist management
-- Favourite songs
+- Favourite music
 - Easy library organization
-- Recently played music
-- Quick access to saved content
+- Recently played content
+- Quick access to saved music
 
 </td>
-    <td width="50%" valign="top">
 
-#### 🔍 Search & Discovery
+<td width="50%" valign="top">
+
+### 🔍 Search & Discovery
+
 - Fast music search
 - Discover new music
 - Browse songs and playlists
-- Simple and clean search experience
+- Clean search experience
+- Quick music access
 
 </td>
   </tr>
@@ -90,55 +126,65 @@
   <tr>
     <td width="50%" valign="top">
 
-#### 👥 Listen Together
+### 👥 Listen Together
+
 - Listen with friends
 - Shared listening experience
-- Simple session-based playback
-- Designed for social music listening
+- Social music playback
+- Easy session-based listening
 
 </td>
+
+<td width="50%" valign="top">
+
+### 🎨 Interface
+
+- Modern Android interface
+- Clean dark design
+- Smooth navigation
+- Easy playback controls
+- Mobile-friendly layout
+
+</td>
+  </tr>
+
+  <tr>
     <td width="50%" valign="top">
 
-#### 🎨 Interface
-- Modern Android design
-- Clean dark interface
-- Smooth navigation
-- Simple playback controls
-- Mobile-friendly layout
+### 📥 Offline Experience
+
+- Keep supported music available offline
+- Convenient access to saved content
+- Reduce repeated loading
+- Listen when connectivity is limited
+
+</td>
+
+<td width="50%" valign="top">
+
+### ⚡ Performance
+
+- Fast startup
+- Responsive controls
+- Smooth screen transitions
+- Lightweight navigation
+- Designed for everyday listening
 
 </td>
   </tr>
 </table>
 
 </div>
+
 ---
 
 <div align="center">
 
-<h1 id="download-now">Download Now</h1>
+# Download Now
 
-<h3>Get the latest stable version of Mixify for Android</h3>
+<a id="download-now"></a>
 
-<br/>
-
-<a href="https://github.com/scisims12/Mixify/releases/latest">
-  <img src="https://img.shields.io/badge/Download-Latest%20Release-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Download Mixify">
-</a>
-
-<br/><br/>
-
-<a href="https://github.com/scisims12/Mixify/releases">
-  View all releases
-</a>
-
-</div>
----
-
-<div align="center">
-
-<h1 id="download-now">Download Now</h1>
-
-<h2>Stable Release</h2>
+## Stable Release
 
 <table>
   <tr>
@@ -148,28 +194,101 @@
 
   <tr>
     <td align="center">
+      <a href="https://apkpure.com/p/com.mixify.app">
+        <img src="https://img.shields.io/badge/GET%20IT%20ON-APKPure-24CD77?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" alt="Get Mixify on APKPure" height="65">
+      </a>
+    </td>
 
-<a href="YOUR_APKPURE_LINK">
-  <img src="https://img.shields.io/badge/GET%20IT%20ON-APKPure-24cd77?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" height="65" alt="Get Mixify on APKPure">
-</a>
-
-</td>
-
-<td align="center">
-
-<a href="https://github.com/scisims12/Mixify/releases/latest">
-  <img src="https://img.shields.io/badge/GET%20IT%20ON-GitHub-white?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" height="65" alt="Get Mixify on GitHub">
-</a>
-
-</td>
+    <td align="center">
+      <a href="https://github.com/scisims12/Mixify/releases/latest">
+        <img src="https://img.shields.io/badge/GET%20IT%20ON-GitHub-FFFFFF?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" alt="Get Mixify on GitHub" height="65">
+      </a>
+    </td>
   </tr>
 </table>
 
 <br/>
 
-### Choose your preferred download source
+### Latest Stable Version
 
-**APKPure** for easy installation and updates  
-**GitHub** for official Mixify releases and release notes
+[![Latest Release](https://img.shields.io/github/v/release/scisims12/Mixify?style=for-the-badge&label=Mixify&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases/latest)
+
+<br/>
+
+**Download Mixify from your preferred source.**
+
+[View all GitHub releases](https://github.com/scisims12/Mixify/releases)
 
 </div>
+
+---
+
+<div align="center">
+
+# Installation
+
+<a id="installation"></a>
+
+</div>
+
+### Install from GitHub
+
+1. Open the **Releases** section.
+2. Select the latest Mixify release.
+3. Download the APK file.
+4. Open the downloaded APK.
+5. Allow installation from the required source if Android asks.
+6. Install Mixify.
+7. Open the app and start listening.
+
+### Install from APKPure
+
+1. Open the [Mixify APKPure page](https://apkpure.com/p/com.mixify.app).
+2. Download the latest available version.
+3. Install the APK.
+4. Launch Mixify.
+
+> Always download Mixify from the official GitHub repository or a trusted distribution source.
+
+---
+
+<div align="center">
+
+# Community
+
+Join the Mixify community for updates, release announcements and discussions.
+
+<br/>
+
+<a href="https://t.me/mixify20">
+  <img src="https://img.shields.io/badge/Join%20Mixify-Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117" alt="Join Mixify on Telegram">
+</a>
+
+<br/><br/>
+
+**Telegram:** [t.me/mixify20](https://t.me/mixify20)
+
+</div>
+
+---
+
+<div align="center">
+
+# Building From Source
+
+</div>
+
+Mixify can be built using Android Studio.
+
+### Requirements
+
+- Android Studio
+- Android SDK
+- Gradle
+- Java/Kotlin environment required by the project
+- Internet connection for dependencies
+
+### Clone the repository
+
+```bash
+git clone https://github.com/scisims12/Mixify.git
