@@ -505,8 +505,7 @@ If you enjoy Mixify, you can support the project by:
       <td>Time-synced lyrics with word-by-word highlighting &amp; YouTube Music integration</td>
     </tr>
     <tr>
-      <td align="center"><a href="https://github.com/MetrolistGroup/metroserver"><strong>metroserver</strong></a></td>
-      <td>Listen-together real-time backend</td>
+      
     </tr>
     <!--
     Uncomment a row below only if Mixify actually uses it:
