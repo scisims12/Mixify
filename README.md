@@ -566,7 +566,7 @@ Users and contributors are responsible for complying with applicable licenses, p
 
 <br/>
 
-**Made with ❤️ for music lovers**
+**Made with ❤️ for music lovers by [Priyanshu Sharma](https://www.instagram.com/sharmaajikabadabeta?stkn=M2lvNWJsdTBodjRy)**
 
 <br/>
 
