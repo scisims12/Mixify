@@ -21,6 +21,7 @@
 
 [**Download**](#download-now) ·
 [**Features**](#features) ·
+[**Origins & Modifications**](#project-origins) ·
 [**Screenshots**](#screenshots) ·
 [**Installation**](#installation) ·
 [**FAQ**](#faq) ·
@@ -460,6 +461,59 @@ If you enjoy Mixify, you can support the project by:
 </a>
 
 </div>
+
+---
+
+<div align="center">
+
+<h1 id="project-origins">Project Origins &amp; Modifications</h1>
+
+### Open-source foundations, meaningful customization, and ongoing development
+
+</div>
+
+Mixify has been developed within the open-source Android music ecosystem, with **InnerTune** and **OuterTune** acknowledged as important upstream influences. Their authors and contributors are credited in the [Special Thanks](#special-thanks) section below.
+
+The Mixify developer has also invested substantial work in redesigning the application, implementing a personalized Mix experience, integrating a custom Listen Together server, and improving music fetching and playback.
+
+> **Transparency note:** This section describes modifications and development work on Mixify. It does not claim that every component was written from scratch or that all upstream code originated with Mixify. Existing third-party code and contributions retain their original authorship and applicable license requirements.
+
+### 🎨 Interface Redesign &amp; Visual Improvements
+
+- **Liquid Glass bottom navigation:** Substantially redesigned the bottom navigation bar with translucent, glass-inspired visual effects and updated interactions.
+- **Mini player:** Reworked the mini-player's appearance and playback interface.
+- **Now Playing screen:** Redesigned the player with an Apple-inspired visual direction, updated layouts, and a more immersive presentation.
+- **Lyrics screen:** Customized the lyrics display and its surrounding player interface.
+- **Home screen:** Reworked sections and layouts to improve the browsing experience.
+- **Search screen:** Redesigned the search and music-discovery interface.
+- **Library screen:** Customized the organization and navigation of saved music and playlists.
+
+### 🎵 Personalized Mix Experience
+
+Mixify includes a dedicated **Mix** section designed around the user's available listening data and music preferences, helping listeners discover relevant mixes and collections.
+
+This is a key focus of Mixify's ongoing feature development and interface customization.
+
+### 👥 Listen Together &amp; Custom Server
+
+A significant area of development has been **Listen Together**, including a **custom server setup** for shared listening sessions.
+
+The system is designed to support shared rooms, communication between listeners, and playback synchronization. The developer continues to refine the session experience and reliability.
+
+### ⚡ Music Fetching &amp; Playback
+
+Significant effort has gone into how Mixify fetches songs and manages the listening experience, including work on music retrieval, playback integration, interface behavior, and bug fixes.
+
+### 🌱 Attribution &amp; Continuing Development
+
+Mixify continues to evolve through feature improvements, UI refinements, and fixes. Its changes should be understood alongside the underlying open-source work and third-party integrations used by the project.
+
+**Acknowledged upstream projects:**
+
+- [InnerTune](https://github.com/z-huang/InnerTune)
+- [OuterTune](https://github.com/DD3Boh/OuterTune)
+
+Mixify is distributed under the **GNU GPL-3.0**. Reused source code, libraries, and assets remain subject to their applicable licenses and attribution obligations. The exact code lineage and modification history can be explored through the repository's source files and commit history.
 
 ---
 
