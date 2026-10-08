@@ -132,3 +132,44 @@
 </a>
 
 </div>
+---
+
+<div align="center">
+
+<h1 id="download-now">Download Now</h1>
+
+<h2>Stable Release</h2>
+
+<table>
+  <tr>
+    <th align="center">APKPure</th>
+    <th align="center">GitHub</th>
+  </tr>
+
+  <tr>
+    <td align="center">
+
+<a href="YOUR_APKPURE_LINK">
+  <img src="https://img.shields.io/badge/GET%20IT%20ON-APKPure-24cd77?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" height="65" alt="Get Mixify on APKPure">
+</a>
+
+</td>
+
+<td align="center">
+
+<a href="https://github.com/scisims12/Mixify/releases/latest">
+  <img src="https://img.shields.io/badge/GET%20IT%20ON-GitHub-white?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" height="65" alt="Get Mixify on GitHub">
+</a>
+
+</td>
+  </tr>
+</table>
+
+<br/>
+
+### Choose your preferred download source
+
+**APKPure** for easy installation and updates  
+**GitHub** for official Mixify releases and release notes
+
+</div>
