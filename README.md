@@ -575,10 +575,3 @@ Users and contributors are responsible for complying with applicable licenses, p
 [![Telegram](https://img.shields.io/badge/Telegram-mixify20-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/mixify20)
 
 </div>
-
-Made with ❤️ for movie lovers by [Priyanshu Sharma](https://github.com/scisims12)
-
-[![GitHub](https://img.shields.io/badge/GITHUB-SCISIMS12-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/scisims12)
-[![Telegram](https://img.shields.io/badge/TELEGRAM-YOUR__CHANNEL-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/your_channel)
-
-</div>
