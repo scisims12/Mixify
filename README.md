@@ -465,13 +465,70 @@ If you enjoy Mixify, you can support the project by:
 
 <div align="center">
 
-<h1 id="credits">Inspiration & Credits</h1>
+<h1 id="special-thanks">Special Thanks</h1>
+
+<h3>Mixify stands on the shoulders of incredible open-source work.</h3>
+
+<h3>Main Inspirations</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th align="center">Project</th>
+      <th align="center">Authors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/z-huang/InnerTune"><strong>InnerTune</strong></a></td>
+      <td align="center"><a href="https://github.com/z-huang">Zion Huang</a> · <a href="https://github.com/Malopieds">Malopieds</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/DD3Boh/OuterTune"><strong>OuterTune</strong></a></td>
+      <td align="center"><a href="https://github.com/DD3Boh">Davide Garberi</a> · <a href="https://github.com/mikooomich">Michael Zh</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Libraries &amp; Integrations</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th align="center">Project</th>
+      <th align="center">Contribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://better-lyrics.boidu.dev"><strong>Better Lyrics</strong></a></td>
+      <td>Time-synced lyrics with word-by-word highlighting &amp; YouTube Music integration</td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/MetrolistGroup/metroserver"><strong>metroserver</strong></a></td>
+      <td>Listen-together real-time backend</td>
+    </tr>
+    <!--
+    Uncomment a row below only if Mixify actually uses it:
+    <tr>
+      <td align="center"><a href="https://github.com/aleksey-saenko/MusicRecognizer"><strong>MusicRecognizer</strong></a></td>
+      <td>Music recognition feature &amp; Shazam API integration</td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/ZemerTeam/zemer-cipher"><strong>zemer-cipher</strong></a></td>
+      <td>YouTube cipher deobfuscation and PoToken generation</td>
+    </tr>
+    -->
+  </tbody>
+</table>
+
+<br/>
+
+InnerTune itself credits [ViMusic](https://github.com/vfsfitvnm/ViMusic) by vfsfitvnm as an inspiration, so thanks to that project as well.
+
+<h3>We also thank the entire open-source community! For every library, tool, and API that powers this project.</h3>
 
 </div>
-
-Mixify is inspired by **[InnerTune](https://github.com/z-huang/InnerTune)** by [Zion Huang](https://github.com/z-huang), an open-source Material 3 music client for Android licensed under **GPL-3.0**.
-
-Thank you to InnerTune and its contributors for the open-source work and ideas that helped shape Mixify. InnerTune itself credits [ViMusic](https://github.com/vfsfitvnm/ViMusic) by vfsfitvnm as an inspiration, so thanks to that project as well.
 
 ---
 
