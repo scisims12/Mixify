@@ -11,6 +11,7 @@
 [![Latest Release](https://img.shields.io/github/v/release/scisims12/Mixify?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases)
 [![Android](https://img.shields.io/badge/Android-App-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117)](https://github.com/scisims12/Mixify)
+[![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge&labelColor=0d1117)](LICENSE)
 
 <br/>
 
@@ -23,6 +24,7 @@
 [**Screenshots**](#screenshots) ·
 [**Installation**](#installation) ·
 [**FAQ**](#faq) ·
+[**License**](#license) ·
 [**Telegram**](https://t.me/mixify20)
 
 </div>
@@ -463,9 +465,35 @@ If you enjoy Mixify, you can support the project by:
 
 <div align="center">
 
+<h1 id="credits">Inspiration & Credits</h1>
+
+</div>
+
+Mixify is inspired by **[InnerTune](https://github.com/z-huang/InnerTune)** by [Zion Huang](https://github.com/z-huang), an open-source Material 3 music client for Android licensed under **GPL-3.0**.
+
+Thank you to InnerTune and its contributors for the open-source work and ideas that helped shape Mixify. InnerTune itself credits [ViMusic](https://github.com/vfsfitvnm/ViMusic) by vfsfitvnm as an inspiration, so thanks to that project as well.
+
+---
+
+<div align="center">
+
+<h1 id="license">License</h1>
+
+</div>
+
+Mixify is licensed under the **GNU General Public License v3.0 (GPL-3.0)**. See the [LICENSE](LICENSE) file for the full text.
+
+In short, you are free to use, study, modify and share Mixify under the terms of the GPL-3.0. Any modified or redistributed version must also be released under the same license, with its source code made available.
+
+Third-party libraries, services and content used by Mixify remain under their own licenses.
+
+---
+
+<div align="center">
+
 # Disclaimer
 
-Mixify is an independent software project.
+Mixify is an independent software project and is not affiliated with, endorsed by, or maintained by InnerTune or its developers.
 
 Any trademarks, service names, music, artwork, APIs or third-party services referenced or accessed through the application remain the property of their respective owners.
 
