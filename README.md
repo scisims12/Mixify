@@ -179,14 +179,12 @@ It brings together music playback, smart lyrics, offline listening, playlist man
     <th align="center">APKPure</th>
     <th align="center">GitHub</th>
   </tr>
-
   <tr>
     <td align="center">
       <a href="https://apkpure.com/p/com.mixify.app">
         <img src="https://img.shields.io/badge/GET%20IT%20ON-APKPure-24CD77?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" alt="Get Mixify on APKPure" height="65">
       </a>
     </td>
-
     <td align="center">
       <a href="https://github.com/scisims12/Mixify/releases/latest">
         <img src="https://img.shields.io/badge/GET%20IT%20ON-GitHub-FFFFFF?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" alt="Get Mixify on GitHub" height="65">
