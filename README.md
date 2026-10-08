@@ -575,3 +575,55 @@ Users and contributors are responsible for complying with applicable licenses, p
 [![Telegram](https://img.shields.io/badge/Telegram-mixify20-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/mixify20)
 
 </div>
+
+---
+
+## Disclaimer
+
+Movify is an independent software project and is not affiliated with, endorsed by, or maintained by TMDB or any streaming service or content provider.
+
+Any trademarks, service names, movie posters, artwork, APIs or third-party services referenced or accessed through the application remain the property of their respective owners.
+
+This project does not claim ownership of third-party content. Movie data and images are provided by TMDB and are used under their terms.
+
+Users and contributors are responsible for complying with applicable licenses, platform terms and laws when using third-party services or content.
+
+---
+
+<div align="center">
+
+## Movify
+
+**Watch. Discover. Enjoy.**
+
+Made with ❤️ for movie lovers by [Priyanshu Sharma](https://github.com/scisims12)
+
+[![GitHub](https://img.shields.io/badge/GITHUB-SCISIMS12-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/scisims12)
+[![Telegram](https://img.shields.io/badge/TELEGRAM-YOUR__CHANNEL-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/your_channel)
+
+</div>---
+
+## Disclaimer
+
+Movify is an independent software project and is not affiliated with, endorsed by, or maintained by TMDB or any streaming service or content provider.
+
+Any trademarks, service names, movie posters, artwork, APIs or third-party services referenced or accessed through the application remain the property of their respective owners.
+
+This project does not claim ownership of third-party content. Movie data and images are provided by TMDB and are used under their terms.
+
+Users and contributors are responsible for complying with applicable licenses, platform terms and laws when using third-party services or content.
+
+---
+
+<div align="center">
+
+## Movify
+
+**Watch. Discover. Enjoy.**
+
+Made with ❤️ for movie lovers by [Priyanshu Sharma](https://github.com/scisims12)
+
+[![GitHub](https://img.shields.io/badge/GITHUB-SCISIMS12-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/scisims12)
+[![Telegram](https://img.shields.io/badge/TELEGRAM-YOUR__CHANNEL-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/your_channel)
+
+</div>
