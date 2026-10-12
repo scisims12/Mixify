@@ -292,7 +292,7 @@ Join the Mixify community for updates, release announcements and discussions.
 
 <br/><br/>
 
-[**Join Mixify on Telegram**](https://t.me/mixify20) · [**Join Mixify on Discord**](https://discord.gg/qtVYB2wyH3)
+[**Join Mixify on Telegram**](https://t.me/mixify20) · [**Join Mixify on Discord**](https://discord.gg/adShjWpu6g)
 
 </div>
 
