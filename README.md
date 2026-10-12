@@ -6,7 +6,7 @@
 
 ### A modern music experience for Android
 
-<a href="https://scisims12.github.io/Mixify/">
+<a href="https://mixify-website.priyanshusharma3674.workers.dev/">
   <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&pause=1200&color=8B5CF6&center=true&vCenter=true&width=680&lines=Listen.+Discover.+Enjoy.;Smart+Lyrics+%E2%80%A2+Offline+Music+%E2%80%A2+Listen+Together;A+smooth+Android+music+experience" alt="Animated Mixify highlights" />
 </a>
 
@@ -19,12 +19,12 @@
 
 <br/>
 
-[![Website](https://img.shields.io/badge/Official-Website-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1117)](https://scisims12.github.io/Mixify/)
+[![Website](https://img.shields.io/badge/Official-Website-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1117)](https://mixify-website.priyanshusharma3674.workers.dev/)
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117)](https://t.me/mixify20)
 
 <br/>
 
-<a href="https://scisims12.github.io/Mixify/#download-now">
+<a href="https://mixify-website.priyanshusharma3674.workers.dev/#download-now">
   <img src="https://img.shields.io/badge/Download_from-Official_Website-8B5CF6?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" alt="Download Mixify from the official website" />
 </a>
 <a href="https://github.com/scisims12/Mixify/releases/latest">
@@ -33,7 +33,7 @@
 
 <br/><br/>
 
-[**Website**](https://scisims12.github.io/Mixify/) ·
+[**Website**](https://mixify-website.priyanshusharma3674.workers.dev/) ·
 [**Download**](#download-now) ·
 [**Features**](#features) ·
 [**Origins & Modifications**](#project-origins) ·
@@ -200,7 +200,7 @@ It brings together music playback, smart lyrics, offline listening, playlist man
   </tr>
   <tr>
     <td align="center">
-      <a href="https://scisims12.github.io/Mixify/#download-now">
+      <a href="https://mixify-website.priyanshusharma3674.workers.dev/#download-now">
         <img src="https://img.shields.io/badge/DOWNLOAD-Website-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1117" alt="Download Mixify from the official website">
       </a>
     </td>
@@ -247,7 +247,7 @@ View all GitHub releases
 
 ### Install from the official website
 
-1. Open the [Mixify download section](https://scisims12.github.io/Mixify/#download-now).
+1. Open the [Mixify download section](https://mixify-website.priyanshusharma3674.workers.dev/#download-now).
 2. Choose **GitHub** for the latest official release or **APKPure** as an alternative source.
 3. Download and open the APK.
 4. Allow installation from the required source if Android asks.
@@ -270,7 +270,7 @@ View all GitHub releases
 3. Install the APK.
 4. Launch Mixify.
 
-> For the safest install, start from the [official Mixify website](https://scisims12.github.io/Mixify/#download-now) or the [official GitHub releases](https://github.com/scisims12/Mixify/releases/latest).
+> For the safest install, start from the [official Mixify website](https://mixify-website.priyanshusharma3674.workers.dev/#download-now) or the [official GitHub releases](https://github.com/scisims12/Mixify/releases/latest).
 
 ---
 
@@ -330,7 +330,7 @@ Open the project in **Android Studio**, allow Gradle to sync, and run the applic
 
 Privacy is important to Mixify.
 
-[**Read Mixify Privacy Policy**](https://scisims12.github.io/Mixify/privacy-policy.html)
+[**Read Mixify Privacy Policy**](https://mixify-website.priyanshusharma3674.workers.dev/privacy-policy.html)
 
 ---
 
@@ -368,7 +368,7 @@ If a secret is accidentally published, revoke or rotate it immediately.
 
 ### Where can I download Mixify?
 
-Use the [official Mixify website](https://scisims12.github.io/Mixify/#download-now), [GitHub Releases](https://github.com/scisims12/Mixify/releases/latest), or [APKPure](https://apkpure.com/p/com.mixify.app).
+Use the [official Mixify website](https://mixify-website.priyanshusharma3674.workers.dev/#download-now), [GitHub Releases](https://github.com/scisims12/Mixify/releases/latest), or [APKPure](https://apkpure.com/p/com.mixify.app).
 
 ### Where can I download the latest GitHub version?
 
