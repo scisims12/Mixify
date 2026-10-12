@@ -481,7 +481,6 @@ If you enjoy Mixify, you can support the project by:
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-Mixify-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/scisims12)
 
-[https://github.com/sponsors/scisims12?preview=true](https://github.com/sponsors/scisims12?preview=true)
 
 <br/>
 
