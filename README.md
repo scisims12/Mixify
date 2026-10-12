@@ -286,9 +286,13 @@ Join the Mixify community for updates, release announcements and discussions.
   <img src="https://img.shields.io/badge/Join%20Mixify-Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117" alt="Join Mixify on Telegram">
 </a>
 
+<a href="https://discord.gg/qtVYB2wyH3">
+  <img src="https://img.shields.io/badge/Join%20Mixify-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=0d1117" alt="Join Mixify on Discord">
+</a>
+
 <br/><br/>
 
-[**Join Mixify on Telegram**](https://t.me/mixify20)
+[**Join Mixify on Telegram**](https://t.me/mixify20) · [**Join Mixify on Discord**](https://discord.gg/qtVYB2wyH3)
 
 </div>
 
