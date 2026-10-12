@@ -656,6 +656,8 @@ Users and contributors are responsible for complying with applicable licenses, p
 
 <br/>
 
+[![Sponsor](https://img.shields.io/badge/Sponsor-Mixify-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/scisims12)
+
 [![GitHub](https://img.shields.io/badge/GitHub-scisims12-181717?style=for-the-badge&logo=github)](https://github.com/scisims12)
 
 [![Telegram](https://img.shields.io/badge/Telegram-mixify20-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/mixify20)
