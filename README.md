@@ -656,7 +656,15 @@ Users and contributors are responsible for complying with applicable licenses, p
 
 <br/>
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-Mixify-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/scisims12)
+### ❤️ Support Mixify
+
+Mixify is free and open-source, built with passion for music lovers.
+
+If you enjoy Mixify, consider sponsoring its development. Your support helps maintain Listen Together servers, improve performance, fix bugs, and build new features.
+
+**Every contribution makes a difference! 🎵**
+
+[![Sponsor Mixify](https://img.shields.io/badge/Sponsor-Mixify-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/scisims12)
 
 [![GitHub](https://img.shields.io/badge/GitHub-scisims12-181717?style=for-the-badge&logo=github)](https://github.com/scisims12)
 
