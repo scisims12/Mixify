@@ -331,6 +331,8 @@ Privacy is important to Mixify.
 
 [**Read Mixify Privacy Policy**](https://mixify-website.priyanshusharma3674.workers.dev/privacy-policy.html)
 
+[**Read Mixify Terms & Conditions**](https://mixify-website.priyanshusharma3674.workers.dev/terms)
+
 ---
 
 <div align="center">
