@@ -19,11 +19,6 @@
 
 <br/>
 
-[![Website](https://img.shields.io/badge/Official-Website-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1117)](https://mixify-website.priyanshusharma3674.workers.dev/)
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117)](https://t.me/mixify20)
-
-<br/>
-
 <a href="https://mixify-website.priyanshusharma3674.workers.dev/#download-now">
   <img src="https://img.shields.io/badge/Download_from-Official_Website-8B5CF6?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" alt="Download Mixify from the official website" />
 </a>
