@@ -329,7 +329,7 @@ Open the project in **Android Studio**, allow Gradle to sync, and run the applic
 
 Privacy is important to Mixify.
 
-[**Read Mixify Privacy Policy**](https://mixify-website.priyanshusharma3674.workers.dev/privacy-policy.html)
+[**Read Mixify Privacy Policy**](https://mixify-website.priyanshusharma3674.workers.dev/privacy)
 
 [**Read Mixify Terms & Conditions**](https://mixify-website.priyanshusharma3674.workers.dev/terms)
 
