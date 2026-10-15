@@ -60,6 +60,13 @@ android {
 
         buildConfigField("String", "LASTFM_API_KEY", "\"$lastFmKey\"")
         buildConfigField("String", "LASTFM_SECRET", "\"$lastFmSecret\"")
+
+        // Google API key: read from local.properties or environment variable (or GitHub Actions secret)
+        // DO NOT commit the real key to source control. Set the repository secret named GOOGLE_API_KEY
+        // in GitHub (Settings → Secrets → Actions) and GitHub Actions will provide it during builds.
+        val googleApiKey = localProperties.getProperty("GOOGLE_API_KEY") ?: System.getenv("GOOGLE_API_KEY") ?: ""
+        buildConfigField("String", "GOOGLE_API_KEY", "\"$googleApiKey\"")
+
         buildConfigField("String", "ARCHITECTURE", "\"universal\"")
         buildConfigField("Long", "DISCORD_APP_ID", "1447278780795064401L")
 
@@ -118,7 +125,7 @@ android {
             keyAlias = "androiddebugkey"
             keyPassword = "android"
             storePassword = "android"
-            storeFile = file("${System.getProperty("user.home")}/.android/debug.keystore")
+            storeFile = file("${'$'}{System.getProperty("user.home")}/.android/debug.keystore")
         }
     }
 
@@ -213,7 +220,7 @@ android {
 
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:${libs.versions.protobuf.get()}"
+        artifact = "com.google.protobuf:protoc:${'$'}{libs.versions.protobuf.get()}"
     }
     generateProtoTasks {
         all().configureEach {
@@ -234,7 +241,7 @@ tasks.named("preBuild") {
 }
 
 ksp {
-    arg("room.schemaLocation", "$projectDir/schemas")
+    arg("room.schemaLocation", "${'$'}projectDir/schemas")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
