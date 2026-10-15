@@ -7,6 +7,9 @@ if (localPropertiesFile.exists()) {
     localProperties.load(localPropertiesFile.inputStream())
 }
 
+// YOUTUBE API key loaded from local.properties or environment (injected into BuildConfig)
+val youtubeApiKey = localProperties.getProperty("YOUTUBE_API_KEY") ?: System.getenv("YOUTUBE_API_KEY") ?: ""
+
 val baseApplicationId = "com.mixify.app"
 val applicationIdOverride = (System.getenv("MIXIFY_APPLICATION_ID") ?: System.getenv("MIXIFY_APPLICATION_ID"))?.takeIf { it.isNotBlank() }
 val appNameOverride = (System.getenv("MIXIFY_APP_NAME") ?: System.getenv("MIXIFY_APP_NAME"))?.takeIf { it.isNotBlank() }
@@ -60,6 +63,8 @@ android {
 
         buildConfigField("String", "LASTFM_API_KEY", "\"$lastFmKey\"")
         buildConfigField("String", "LASTFM_SECRET", "\"$lastFmSecret\"")
+        // Youtube API key injected at build time (local.properties or CI)
+        buildConfigField("String", "YOUTUBE_API_KEY", "\"$youtubeApiKey\"")
         buildConfigField("String", "ARCHITECTURE", "\"universal\"")
         buildConfigField("Long", "DISCORD_APP_ID", "1447278780795064401L")
 
