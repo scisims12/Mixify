@@ -267,7 +267,7 @@ class PoTokenWebView private constructor(
         // Continuations are keyed by a per-call unique key, not the raw identifier: concurrent
         // calls for the same videoId (player + prefetch/download) would otherwise silently
         // overwrite each other's continuation and orphan one caller into the timeout.
-        val requestKey = "$identifier#${requestCounter.incrementAndGet()}"
+        val requestKey = "$identifier#${'$'}{requestCounter.incrementAndGet()}"
         return try {
             withTimeout(GENERATE_TIMEOUT_MS) {
                 generatePoTokenInternal(identifier, requestKey)
@@ -278,8 +278,8 @@ class PoTokenWebView private constructor(
             // PoTokenGenerator's retry recreates the WebView from scratch.
             isDead = true
             popPoTokenContinuation(requestKey)
-            Timber.tag(TAG).e("PO-token generation timed out after ${GENERATE_TIMEOUT_MS}ms")
-            throw PoTokenException("poToken generation timed out after ${GENERATE_TIMEOUT_MS}ms")
+            Timber.tag(TAG).e("PO-token generation timed out after ${'$'}{GENERATE_TIMEOUT_MS}ms")
+            throw PoTokenException("poToken generation timed out after ${'$'}{GENERATE_TIMEOUT_MS}ms")
         }
     }
 
@@ -435,13 +435,15 @@ class PoTokenWebView private constructor(
             webView.onPause()
             webView.removeAllViews()
             webView.destroy()
-        }.onFailure { Timber.tag(TAG).w("PO-token WebView teardown failed type=${it::class.simpleName ?: "unknown"}") }
+        }.onFailure { Timber.tag(TAG).w("PO-token WebView teardown failed type=${'$'}{it::class.simpleName ?: "unknown"}") }
     }
     //endregion
 
     companion object {
         private const val TAG = "PoTokenWebView"
-        private const val GOOGLE_API_KEY = "AIzaSyDyT5W0Jh49F30Pqqtyfdf7pDLFKLJoAnw"
+        // Do NOT hard-code API keys in source. Read at runtime from BuildConfig which should
+        // be supplied at build time from a secure source (CI secret or local env var).
+        private val GOOGLE_API_KEY = BuildConfig.GOOGLE_API_KEY
         private const val REQUEST_KEY = "O43z0dpjhgX20SCx4KAo"
         private const val USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
                 "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.3"
@@ -471,9 +473,9 @@ class PoTokenWebView private constructor(
                     }
                 }
             } catch (e: TimeoutCancellationException) {
-                Timber.tag(TAG).e("PoTokenWebView init timed out after ${INIT_TIMEOUT_MS}ms")
+                Timber.tag(TAG).e("PoTokenWebView init timed out after ${'$'}{INIT_TIMEOUT_MS}ms")
                 closeQuietly(created)
-                throw PoTokenException("PoTokenWebView init timed out after ${INIT_TIMEOUT_MS}ms")
+                throw PoTokenException("PoTokenWebView init timed out after ${'$'}{INIT_TIMEOUT_MS}ms")
             } catch (e: CancellationException) {
                 // Caller cancelled — don't leak the half-initialized WebView.
                 closeQuietly(created)
