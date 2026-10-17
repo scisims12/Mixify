@@ -12,8 +12,14 @@
 
 <br/>
 
+<!--
+  Total downloads badge (sum of downloads of all release assets, all versions).
+  If the badge below ever shows an error, swap it with this Shields.io version:
+  [![Downloads](https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases)
+-->
+
 [![Latest Release](https://img.shields.io/github/v/release/scisims12/Mixify?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases)
+[![Total Downloads](https://badgen.net/github/assets-dl/scisims12/Mixify?label=Downloads&color=8B5CF6&scale=1.2)](https://github.com/scisims12/Mixify/releases)
 [![Android](https://img.shields.io/badge/Android-App-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117)](https://github.com/scisims12/Mixify)
 [![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge&labelColor=0d1117)](LICENSE)
 
