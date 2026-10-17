@@ -220,27 +220,13 @@ It brings together music playback, smart lyrics, offline listening, playlist man
 <a href="https://github.com/scisims12/Mixify/releases/latest">
   <img src="https://img.shields.io/github/v/release/scisims12/Mixify?style=for-the-badge&label=Mixify&labelColor=0d1117" alt="Latest Mixify Release">
 </a>
-
 <br/><br/>
-
-<h3>Total GitHub Downloads — All Versions</h3>
-
-<a href="https://github.com/scisims12/Mixify/releases">
-  <img src="https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&label=Total%20Downloads&color=8B5CF6&labelColor=0d1117" alt="Total downloads across all Mixify GitHub releases">
-</a>
-
-<p>Combined downloads of release assets across all GitHub versions. This count does not include APKPure downloads or unique app installs.</p>
-
 <br/>
-
 <b>Download Mixify from your preferred source.</b>
-
 <br/><br/>
-
 <a href="https://github.com/scisims12/Mixify/releases">
 View all GitHub releases
 </a>
-
 </div>
 
 ---
