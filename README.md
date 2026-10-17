@@ -12,14 +12,9 @@
 
 <br/>
 
-<!--
-  Total downloads badge (sum of downloads of all release assets, all versions).
-  If the badge below ever shows an error, swap it with this Shields.io version:
-  [![Downloads](https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases)
--->
-
+<!-- Combined download count across all GitHub release assets and versions. -->
 [![Latest Release](https://img.shields.io/github/v/release/scisims12/Mixify?style=for-the-badge&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases/latest)
-[![Total Downloads](https://badgen.net/github/assets-dl/scisims12/Mixify?label=Downloads&color=8B5CF6&scale=1.2)](https://github.com/scisims12/Mixify/releases)
+[![Total Downloads](https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&label=Total%20Downloads&color=8B5CF6&labelColor=0d1117)](https://github.com/scisims12/Mixify/releases)
 [![Android](https://img.shields.io/badge/Android-App-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117)](https://github.com/scisims12/Mixify)
 [![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge&labelColor=0d1117)](LICENSE)
 
@@ -228,6 +223,16 @@ It brings together music playback, smart lyrics, offline listening, playlist man
 
 <br/><br/>
 
+<h3>Total GitHub Downloads — All Versions</h3>
+
+<a href="https://github.com/scisims12/Mixify/releases">
+  <img src="https://img.shields.io/github/downloads/scisims12/Mixify/total?style=for-the-badge&label=Total%20Downloads&color=8B5CF6&labelColor=0d1117" alt="Total downloads across all Mixify GitHub releases">
+</a>
+
+<p>Combined downloads of release assets across all GitHub versions. This count does not include APKPure downloads or unique app installs.</p>
+
+<br/>
+
 <b>Download Mixify from your preferred source.</b>
 
 <br/><br/>
@@ -381,6 +386,10 @@ Use the [official Mixify website](https://mixify-website.priyanshusharma3674.wor
 
 [**Download the latest Mixify release**](https://github.com/scisims12/Mixify/releases/latest)
 
+### What does the Total Downloads badge show?
+
+It shows the combined download count of release assets across all Mixify GitHub releases. It does not represent unique users or installs and does not include downloads from APKPure.
+
 ### Does Mixify support offline playback?
 
 Yes, Mixify includes offline listening support for supported saved content.
@@ -487,7 +496,6 @@ If you enjoy Mixify, you can support the project by:
 <br/>
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-Mixify-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/scisims12)
-
 
 <br/>
 
