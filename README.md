@@ -6,7 +6,7 @@
 
 ### A modern music experience for Android
 
-<a href="https://mixify-website.priyanshusharma3674.workers.dev/">
+<a href="https://mixify.co.in/">
   <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&pause=1200&color=8B5CF6&center=true&vCenter=true&width=680&lines=Listen.+Discover.+Enjoy.;Smart+Lyrics+%E2%80%A2+Offline+Music+%E2%80%A2+Listen+Together;A+smooth+Android+music+experience" alt="Animated Mixify highlights" />
 </a>
 
@@ -20,16 +20,16 @@
 
 <br/>
 
-<a href="https://mixify-website.priyanshusharma3674.workers.dev/#download-now">
-  <img src="https://img.shields.io/badge/Download_from-Official_Website-8B5CF6?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" alt="Download Mixify from the official website" />
+<a href="https://mixify.co.in/">
+  <img src="https://img.shields.io/badge/Visit-Official_Website-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1117" alt="Visit the Mixify official website" />
 </a>
-<a href="https://github.com/scisims12/Mixify/releases/latest">
-  <img src="https://img.shields.io/badge/Get-Latest_Release-238636?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" alt="Get the latest Mixify release" />
+<a href="https://github.com/scisims12/Mixify/releases/latest/download/Mixify-with-Google-Cast.apk">
+  <img src="https://img.shields.io/badge/Download-Latest_APK-238636?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" alt="Download the latest Mixify APK" />
 </a>
 
 <br/><br/>
 
-[**Website**](https://mixify-website.priyanshusharma3674.workers.dev/) ·
+[**Website**](https://mixify.co.in/) ·
 [**Download**](#download-now) ·
 [**Features**](#features) ·
 [**Origins & Modifications**](#project-origins) ·
@@ -224,6 +224,12 @@ It brings together music playback, smart lyrics, offline listening, playlist man
 
 <h2>Stable Release</h2>
 
+<a href="https://github.com/scisims12/Mixify/releases/latest/download/Mixify-with-Google-Cast.apk">
+  <img src="https://img.shields.io/badge/Download-APK-238636?style=for-the-badge&logo=android&logoColor=white&labelColor=0d1117" alt="Download latest Mixify APK">
+</a>
+
+<br/>
+
 <table>
   <tr>
     <th align="center">Official Website</th>
@@ -232,8 +238,8 @@ It brings together music playback, smart lyrics, offline listening, playlist man
   </tr>
   <tr>
     <td align="center">
-      <a href="https://mixify-website.priyanshusharma3674.workers.dev/#download-now">
-        <img src="https://img.shields.io/badge/DOWNLOAD-Website-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1117" alt="Download Mixify from the official website">
+      <a href="https://mixify.co.in/">
+        <img src="https://img.shields.io/badge/VISIT-Website-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0d1117" alt="Visit the Mixify official website">
       </a>
     </td>
     <td align="center">
@@ -275,8 +281,8 @@ View all GitHub releases
 
 ### Install from the official website
 
-1. Open the [Mixify download section](https://mixify-website.priyanshusharma3674.workers.dev/#download-now).
-2. Choose **GitHub** for the latest official release or **APKPure** as an alternative source.
+1. Open the [official Mixify website](https://mixify.co.in/).
+2. Tap **Download latest APK** to get the APK from the official GitHub release.
 3. Download and open the APK.
 4. Allow installation from the required source if Android asks.
 5. Install Mixify and start listening.
@@ -298,7 +304,7 @@ View all GitHub releases
 3. Install the APK.
 4. Launch Mixify.
 
-> For the safest install, start from the [official Mixify website](https://mixify-website.priyanshusharma3674.workers.dev/#download-now) or the [official GitHub releases](https://github.com/scisims12/Mixify/releases/latest).
+> For the safest install, start from the [official Mixify website](https://mixify.co.in/) or the [official GitHub releases](https://github.com/scisims12/Mixify/releases/latest).
 
 ---
 
@@ -362,9 +368,9 @@ Open the project in **Android Studio**, allow Gradle to sync, and run the applic
 
 Privacy is important to Mixify.
 
-[**Read Mixify Privacy Policy**](https://mixify-website.priyanshusharma3674.workers.dev/privacy)
+[**Read Mixify Privacy Policy**](https://mixify.co.in/privacy)
 
-[**Read Mixify Terms & Conditions**](https://mixify-website.priyanshusharma3674.workers.dev/terms)
+[**Read Mixify Terms & Conditions**](https://mixify.co.in/terms)
 
 ---
 
@@ -402,7 +408,7 @@ If a secret is accidentally published, revoke or rotate it immediately.
 
 ### Where can I download Mixify?
 
-Use the [official Mixify website](https://mixify-website.priyanshusharma3674.workers.dev/#download-now), [GitHub Releases](https://github.com/scisims12/Mixify/releases/latest), or [APKPure](https://apkpure.com/p/com.mixify.app).
+Use the [official Mixify website](https://mixify.co.in/), [GitHub Releases](https://github.com/scisims12/Mixify/releases/latest), or [APKPure](https://apkpure.com/p/com.mixify.app).
 
 ### Where can I download the latest GitHub version?
 
