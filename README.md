@@ -61,15 +61,51 @@ It brings together music playback, smart lyrics, offline listening, playlist man
 
 <h1 id="screenshots">Screenshots</h1>
 
-<img src="assets/screenshots/home.png" alt="Mixify Home" width="30%" />
-<img src="assets/screenshots/search.png" alt="Mixify Search" width="30%" />
-<img src="assets/screenshots/player.png" alt="Mixify Player" width="30%" />
+### Explore Mixify
 
-<br/>
+<table>
+  <tr>
+    <th align="center">Home</th>
+    <th align="center">Search</th>
+    <th align="center">Music Player</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/screenshots/home.png" alt="Mixify Home" width="220" /></td>
+    <td align="center"><img src="assets/screenshots/search.png" alt="Mixify Search" width="220" /></td>
+    <td align="center"><img src="assets/screenshots/player.png" alt="Mixify Player" width="220" /></td>
+  </tr>
+  <tr>
+    <th align="center">Smart Lyrics</th>
+    <th align="center">Queue</th>
+    <th align="center">Personalized Mix</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/screenshots/lyrics.png" alt="Mixify Lyrics" width="220" /></td>
+    <td align="center"><img src="assets/screenshots/queue.png" alt="Mixify Queue" width="220" /></td>
+    <td align="center"><img src="assets/screenshots/mix.png" alt="Mixify Mix" width="220" /></td>
+  </tr>
+</table>
 
-<img src="assets/screenshots/lyrics.png" alt="Mixify Lyrics" width="30%" />
-<img src="assets/screenshots/queue.png" alt="Mixify Queue" width="30%" />
-<img src="assets/screenshots/mix.png" alt="Mixify Mix" width="30%" />
+### New Experiences
+
+<table>
+  <tr>
+    <th align="center">Listen Together</th>
+    <th align="center">Custom Lock Screen</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/screenshots/listen-together.jpg" alt="Mixify Listen Together" width="265" /></td>
+    <td align="center"><img src="assets/screenshots/custom-lock-screen.jpg" alt="Mixify Custom Lock Screen with Synced Lyrics" width="265" /></td>
+  </tr>
+  <tr>
+    <th align="center">Song Share Card</th>
+    <th align="center">Lyrics Share Card</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="assets/screenshots/song-share-card.jpg" alt="Mixify Song Share Card" width="265" /></td>
+    <td align="center"><img src="assets/screenshots/lyrics-share-card.jpg" alt="Mixify Lyrics Share Card" width="265" /></td>
+  </tr>
+</table>
 
 </div>
 
