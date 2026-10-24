@@ -14,7 +14,6 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -29,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -51,6 +51,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.PlatformTextStyle
+import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontStyle
@@ -58,6 +60,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.text
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -147,10 +151,6 @@ internal fun LyricsLine(
         .fillMaxWidth()
         .onSizeChanged { onSizeChanged(it.height) }
         .clip(RoundedCornerShape(8.dp))
-        .combinedClickable(
-            onClick = onClick,
-            onLongClick = onLongClick
-        )
         .background(if (isSelected && isSelectionModeActive) MaterialTheme.colorScheme.primary.copy(alpha = 0.3f) else Color.Transparent)
         .padding(
             start = when (lyricsTextPosition) { LyricsPosition.LEFT, LyricsPosition.RIGHT -> 11.dp; LyricsPosition.CENTER -> 24.dp },
@@ -266,38 +266,52 @@ internal fun LyricsLine(
                         expressiveAccent = expressiveAccent,
                         isBackground = item.isBackground,
                         focusedAlpha = focusedAlpha,
-                        alignment = agentTextAlign
+                        alignment = agentTextAlign,
+                        onClick = onClick,
+                        onLongClick = onLongClick,
                     )
                 } else {
+                    var textLayout by remember { mutableStateOf<TextLayoutResult?>(null) }
                     Text(
                         text = mainText ?: "",
                         style = lyricStyle.copy(color = if (isActiveLine) expressiveAccent else lineColor),
-                        modifier = Modifier.fillMaxWidth()
+                        onTextLayout = { textLayout = it },
+                        modifier = Modifier.fillMaxWidth().lyricTextActions(
+                            layout = { textLayout }, onClick = onClick, onLongClick = onLongClick,
+                        ),
                     )
                 }
                 
                 if (romanizeLyrics && enabledLanguages.isNotEmpty()) {
-                    subText?.let { 
+                    subText?.let {
+                        var textLayout by remember { mutableStateOf<TextLayoutResult?>(null) }
                         Text(
                             text = it,
                             fontSize = 18.sp,
                             color = expressiveAccent.copy(alpha = 0.6f),
                             textAlign = agentTextAlign,
                             fontWeight = FontWeight.Normal,
-                            modifier = Modifier.padding(top = 2.dp)
+                            onTextLayout = { textLayout = it },
+                            modifier = Modifier.padding(top = 2.dp).lyricTextActions(
+                                layout = { textLayout }, onClick = onClick, onLongClick = onLongClick,
+                            ),
                         )
                     }
                 }
                 
                 val transText by item.translatedTextFlow.collectAsStateWithLifecycle()
-                transText?.let { 
+                transText?.let {
+                    var textLayout by remember { mutableStateOf<TextLayoutResult?>(null) }
                     Text(
                         text = it,
                         fontSize = 16.sp,
                         color = expressiveAccent.copy(alpha = 0.5f),
                         textAlign = agentTextAlign,
                         fontWeight = FontWeight.Normal,
-                        modifier = Modifier.padding(top = 4.dp)
+                        onTextLayout = { textLayout = it },
+                        modifier = Modifier.padding(top = 4.dp).lyricTextActions(
+                            layout = { textLayout }, onClick = onClick, onLongClick = onLongClick,
+                        ),
                     )
                 }
             }
@@ -330,7 +344,9 @@ private fun WordLevelLyrics(
     expressiveAccent: Color,
     isBackground: Boolean,
     focusedAlpha: Float,
-    alignment: TextAlign
+    alignment: TextAlign,
+    onClick: () -> Unit,
+    onLongClick: () -> Unit,
 ) {
     val density = LocalDensity.current
     val textMeasurer = rememberTextMeasurer()
@@ -513,6 +529,8 @@ private fun WordLevelLyrics(
         Canvas(modifier = Modifier
             .fillMaxWidth()
             .height(with(density) { layoutResult.size.height.toDp() })
+            .semantics { text = AnnotatedString(mainText) }
+            .lyricTextActions(layout = { layoutResult }, onClick = onClick, onLongClick = onLongClick)
             .graphicsLayer(
                 clip = false,
                 compositingStrategy = CompositingStrategy.Offscreen,

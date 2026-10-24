@@ -10,6 +10,7 @@ import android.app.Activity
 import android.content.Intent
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.media3.common.Player
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationState
@@ -328,6 +329,24 @@ fun ExperimentalLyrics(
         }
     }
 
+    // A seek can originate from lyric taps, notifications or another controller,
+    // not just from the slider. Observe all position discontinuities.
+    var positionDiscontinuity by remember(playerConnection) { mutableIntStateOf(0) }
+    DisposableEffect(playerConnection) {
+        val listener = object : Player.Listener {
+            override fun onPositionDiscontinuity(
+                oldPosition: Player.PositionInfo,
+                newPosition: Player.PositionInfo,
+                reason: Int,
+            ) {
+                positionDiscontinuity++
+            }
+        }
+        playerConnection.player.addListener(listener)
+        onDispose { playerConnection.player.removeListener(listener) }
+    }
+
+    val mainLineIndices = remember(lines) { lines.indices.filter { !lines[it].isBackground } }
     var lastMainMaxSeen by remember(lyrics, lines) { mutableIntStateOf(-1) }
     var smoothPositionForSync by remember { mutableLongStateOf(0L) }
 
@@ -339,10 +358,19 @@ fun ExperimentalLyrics(
         
         var lastPlayerPos = playerConnection.player.currentPosition
         var lastUpdateTime = System.currentTimeMillis()
+        var handledDiscontinuity = positionDiscontinuity
         
         while (isActive) {
             withFrameNanos { _ -> }
             val now = System.currentTimeMillis()
+            val playbackJumped = handledDiscontinuity != positionDiscontinuity
+            if (playbackJumped) {
+                handledDiscontinuity = positionDiscontinuity
+                lastPlayerPos = playerConnection.player.currentPosition
+                lastUpdateTime = now
+                isAutoScrollEnabled = true
+                lastPreviewTime = 0L
+            }
             val sliderPosition = sliderPositionProvider()
             isSeeking = sliderPosition != null
             
@@ -395,46 +423,27 @@ fun ExperimentalLyrics(
                 .filter { lines.getOrNull(it)?.isBackground == false }
                 .maxOrNull() ?: (scrollActiveIndices.maxOrNull() ?: -1)
 
-            val isCurrentTargetStillActive = scrollTargetIndex in scrollActiveIndices
-            val anyStillActive = scrollActiveIndices.isNotEmpty()
+            val resyncTarget = if (isSeeking || playbackJumped) {
+                scrollMax.takeIf { it >= 0 }
+                    ?: lines.indexOfLast { !it.isBackground && it.time <= effectivePosition }
+                        .takeIf { it >= 0 }
+                    ?: lines.indexOfFirst { !it.isBackground }
+            } else null
 
-            val shouldScroll = when {
-                isSeeking -> true
-                // If current target just ended and there are other active lines, scroll to the new max
-                !isCurrentTargetStillActive && anyStillActive && scrollMax > scrollTargetIndex -> true
-                
-                // If current target just ended and no other active lines
-                !isCurrentTargetStillActive && !anyStillActive && previousScrollActiveIndices.isNotEmpty() -> true
-                
-                // If we don't have a target yet and lines became active
-                scrollTargetIndex == -1 && anyStillActive -> true
-                
-                // New line started while nothing was active before
-                previousScrollActiveIndices.isEmpty() && anyStillActive && scrollMax > scrollTargetIndex -> true
-
-                else -> false
-            }
-
-            if (shouldScroll) {
-                val targetToScroll = when {
-                    isSeeking -> scrollMax
-                    !isCurrentTargetStillActive && anyStillActive -> scrollMax
-                    !isCurrentTargetStillActive && !anyStillActive -> {
-                        (lastMainMaxSeen + 1 until lines.size).firstOrNull {
-                            lines.getOrNull(it)?.isBackground == false
-                        } ?: scrollTargetIndex
-                    }
-                    else -> scrollMax
-                }
-                if (targetToScroll != -1 && (isSeeking || targetToScroll > scrollTargetIndex)) {
-                    scrollTargetIndex = targetToScroll
-                }
-            }
-            
-            if (scrollMax > lastMainMaxSeen && scrollMax != -1) {
+            scrollTargetIndex = resolveLyricsScrollTarget(
+                currentTarget = scrollTargetIndex,
+                activeIndices = scrollActiveIndices,
+                mainLineIndices = mainLineIndices,
+                lastMainMaxSeen = lastMainMaxSeen,
+                previouslyHadActiveLines = previousScrollActiveIndices.isNotEmpty(),
+                resyncTarget = resyncTarget,
+            )
+            if (resyncTarget != null) {
+                lastMainMaxSeen = resyncTarget
+            } else if (scrollMax > lastMainMaxSeen) {
                 lastMainMaxSeen = scrollMax
             }
-            
+
             previousScrollActiveIndices = scrollActiveIndices
             activeLineIndices = newActiveIndices
         }

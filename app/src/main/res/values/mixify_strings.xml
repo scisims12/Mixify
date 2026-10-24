@@ -937,4 +937,5 @@
     <string name="share_to_text_message">Text message</string>
     <string name="share_more">More</string>
     <string name="shared_from_mixify">Shared from Mixify</string>
+    <string name="mini_player_replay">Replay</string>
 </resources>
