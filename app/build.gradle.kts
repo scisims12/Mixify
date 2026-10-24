@@ -125,7 +125,7 @@ android {
             keyAlias = "androiddebugkey"
             keyPassword = "android"
             storePassword = "android"
-            storeFile = file("${'$'}{System.getProperty("user.home")}/.android/debug.keystore")
+            storeFile = file("${System.getProperty("user.home")}/.android/debug.keystore")
         }
     }
 
@@ -220,7 +220,7 @@ android {
 
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:${'$'}{libs.versions.protobuf.get()}"
+        artifact = "com.google.protobuf:protoc:${libs.versions.protobuf.get()}"
     }
     generateProtoTasks {
         all().configureEach {
@@ -241,7 +241,7 @@ tasks.named("preBuild") {
 }
 
 ksp {
-    arg("room.schemaLocation", "${'$'}projectDir/schemas")
+    arg("room.schemaLocation", "$projectDir/schemas")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {

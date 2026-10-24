@@ -14,7 +14,7 @@ concurrency:
 jobs:
   check-version:
     if: "!contains(github.ref, 'refs/tags')"
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     outputs:
       version_changed: ${{ steps.check_version.outputs.version_changed }}
@@ -86,7 +86,7 @@ jobs:
   build:
     needs: check-version
     if: needs.check-version.outputs.version_changed == 'true' || github.event_name == 'workflow_dispatch'
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     strategy:
       matrix:
@@ -129,6 +129,7 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           LASTFM_SECRET: ${{ secrets.LASTFM_SECRET }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: Sign APK
         uses: ilharp/sign-android-release@v2.0.0
@@ -177,7 +178,7 @@ jobs:
     if: needs.check-version.outputs.version_changed == 'true' || github.event_name == 'workflow_dispatch'
     permissions:
       contents: write
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
