@@ -267,7 +267,7 @@ class PoTokenWebView private constructor(
         // Continuations are keyed by a per-call unique key, not the raw identifier: concurrent
         // calls for the same videoId (player + prefetch/download) would otherwise silently
         // overwrite each other's continuation and orphan one caller into the timeout.
-        val requestKey = "$identifier#${'$'}{requestCounter.incrementAndGet()}"
+        val requestKey = "$identifier#${requestCounter.incrementAndGet()}"
         return try {
             withTimeout(GENERATE_TIMEOUT_MS) {
                 generatePoTokenInternal(identifier, requestKey)
@@ -278,8 +278,8 @@ class PoTokenWebView private constructor(
             // PoTokenGenerator's retry recreates the WebView from scratch.
             isDead = true
             popPoTokenContinuation(requestKey)
-            Timber.tag(TAG).e("PO-token generation timed out after ${'$'}{GENERATE_TIMEOUT_MS}ms")
-            throw PoTokenException("poToken generation timed out after ${'$'}{GENERATE_TIMEOUT_MS}ms")
+            Timber.tag(TAG).e("PO-token generation timed out after ${GENERATE_TIMEOUT_MS}ms")
+            throw PoTokenException("poToken generation timed out after ${GENERATE_TIMEOUT_MS}ms")
         }
     }
 
@@ -435,7 +435,7 @@ class PoTokenWebView private constructor(
             webView.onPause()
             webView.removeAllViews()
             webView.destroy()
-        }.onFailure { Timber.tag(TAG).w("PO-token WebView teardown failed type=${'$'}{it::class.simpleName ?: "unknown"}") }
+        }.onFailure { Timber.tag(TAG).w("PO-token WebView teardown failed type=${it::class.simpleName ?: "unknown"}") }
     }
     //endregion
 
@@ -473,9 +473,9 @@ class PoTokenWebView private constructor(
                     }
                 }
             } catch (e: TimeoutCancellationException) {
-                Timber.tag(TAG).e("PoTokenWebView init timed out after ${'$'}{INIT_TIMEOUT_MS}ms")
+                Timber.tag(TAG).e("PoTokenWebView init timed out after ${INIT_TIMEOUT_MS}ms")
                 closeQuietly(created)
-                throw PoTokenException("PoTokenWebView init timed out after ${'$'}{INIT_TIMEOUT_MS}ms")
+                throw PoTokenException("PoTokenWebView init timed out after ${INIT_TIMEOUT_MS}ms")
             } catch (e: CancellationException) {
                 // Caller cancelled — don't leak the half-initialized WebView.
                 closeQuietly(created)
