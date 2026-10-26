@@ -64,6 +64,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.geometry.Offset
@@ -379,7 +382,11 @@ private fun NewMiniPlayer(
                     ) {
                         Icon(
                             painter = painterResource(if (isFavorite) R.drawable.favorite else R.drawable.favorite_border),
-                            contentDescription = null,
+                            contentDescription = stringResource(
+                                if (isEpisode) {
+                                    if (isFavorite) R.string.remove_episode_from_saved else R.string.save_episode_for_later
+                                } else if (isFavorite) R.string.action_remove_like else R.string.action_like,
+                            ),
                             tint = if (isFavorite) primaryColor else iconTint,
                             modifier = Modifier.size(22.dp),
                         )
@@ -409,7 +416,9 @@ private fun NewMiniPlayer(
                                         R.drawable.play
                                     },
                                 ),
-                            contentDescription = null,
+                            contentDescription = miniPlayerPlaybackDescription(
+                                playbackState, effectiveIsPlaying, isCasting,
+                            ),
                             tint = iconTint,
                             modifier = Modifier.size(24.dp),
                         )
@@ -459,6 +468,9 @@ private fun NewMiniPlayerPlayButton(
     val isListenTogetherGuest = listenTogetherManager?.let { it.isInRoom && !it.isHost } ?: false
     val isMuted by playerConnection.isMuted.collectAsStateWithLifecycle()
 
+    val playbackDescription = miniPlayerPlaybackDescription(
+        playbackState, effectiveIsPlaying, isCasting, isListenTogetherGuest, isMuted,
+    )
     val trackColor = outlineColor.copy(alpha = 0.2f)
     val strokeWidth = 3.dp
 
@@ -507,7 +519,8 @@ private fun NewMiniPlayerPlayButton(
                     .size(40.dp)
                     .clip(CircleShape)
                     .border(1.dp, outlineColor.copy(alpha = 0.3f), CircleShape)
-                    .clickable {
+                    .semantics { contentDescription = playbackDescription }
+                    .clickable(role = Role.Button) {
                         if (isListenTogetherGuest) {
                             playerConnection.toggleMute()
                             return@clickable
@@ -807,7 +820,7 @@ private fun LegacyMiniPlayer(
                 enabled = canSkipNext && !isListenTogetherGuest,
                 onClick = if (isListenTogetherGuest) ({}) else ({ playerConnection.seekToNext() }),
             ) {
-                Icon(painter = painterResource(R.drawable.skip_next), contentDescription = null)
+                Icon(painter = painterResource(R.drawable.skip_next), contentDescription = stringResource(R.string.next))
             }
         }
 
@@ -876,7 +889,9 @@ private fun LegacyPlayPauseButton(
                         else -> R.drawable.play
                     },
                 ),
-            contentDescription = null,
+            contentDescription = miniPlayerPlaybackDescription(
+                playbackState, effectiveIsPlaying, isCasting, isListenTogetherGuest, isMuted,
+            ),
         )
     }
 }
@@ -1060,9 +1075,29 @@ private fun FavoriteButton(
     ) {
         Icon(
             painter = painterResource(if (isLiked) R.drawable.favorite else R.drawable.favorite_border),
-            contentDescription = null,
+            contentDescription = stringResource(
+                if (isEpisode) {
+                    if (isLiked) R.string.remove_episode_from_saved else R.string.save_episode_for_later
+                } else if (isLiked) R.string.action_remove_like else R.string.action_like,
+            ),
             tint = if (isLiked) errorColor else onSurfaceColor.copy(alpha = 0.7f),
             modifier = Modifier.size(20.dp),
         )
     }
 }
+
+@Composable
+private fun miniPlayerPlaybackDescription(
+    playbackState: Int,
+    isPlaying: Boolean,
+    isCasting: Boolean,
+    isGuest: Boolean = false,
+    isMuted: Boolean = false,
+): String = stringResource(
+    when {
+        isGuest -> if (isMuted) R.string.unmute else R.string.mute
+        !isCasting && playbackState == Player.STATE_ENDED -> R.string.mini_player_replay
+        isPlaying -> R.string.pause
+        else -> R.string.play
+    },
+)

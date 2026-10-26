@@ -15,7 +15,8 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.*
@@ -37,6 +38,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.semantics.Role
 import com.mixify.music.ui.screens.Screens
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
@@ -79,7 +81,6 @@ fun AppNavigationRail(
             val isSelected = remember(currentRoute, screen.route) {
                 isRouteSelected(currentRoute, screen.route, navigationItems)
             }
-            val currentIsSelected by rememberUpdatedState(isSelected)
             val iconRes = remember(isSelected, screen) {
                 if (isSelected) screen.iconIdActive else screen.iconIdInactive
             }
@@ -95,42 +96,15 @@ fun AppNavigationRail(
 
             val isSearchItem = screen == Screens.Search && onSearchLongClick != null
             val isHomeHoldItem = screen == Screens.Home && onHomeLongHold != null
-            val interactionSource = remember { MutableInteractionSource() }
-
-            // Long press detection using InteractionSource
-            if (isSearchItem || isHomeHoldItem) {
-                LaunchedEffect(interactionSource) {
-                    var isLongClick = false
-                    interactionSource.interactions.collectLatest { interaction ->
-                        when (interaction) {
-                            is PressInteraction.Press -> {
-                                isLongClick = false
-                                delay(if (isHomeHoldItem) 15_000L else viewConfiguration.longPressTimeoutMillis)
-                                isLongClick = true
-                                haptics.performHapticFeedback(HapticFeedbackType.LongPress)
-                                if (isHomeHoldItem) onHomeLongHold.invoke() else onSearchLongClick?.invoke()
-                            }
-                            is PressInteraction.Release -> {
-                                if (!isLongClick) {
-                                    onItemClick(screen, currentIsSelected)
-                                }
-                            }
-                            is PressInteraction.Cancel -> {
-                                isLongClick = false
-                            }
-                        }
-                    }
-                }
-            }
-
+            val (interactionSource, onNavigationClick) = rememberNavigationClick(
+                onClick = { onItemClick(screen, isSelected) },
+                onLongClick = if (isHomeHoldItem) onHomeLongHold else if (isSearchItem) onSearchLongClick else null,
+                longPressTimeoutMillis = if (isHomeHoldItem) 15_000L else viewConfiguration.longPressTimeoutMillis,
+                haptics = haptics,
+            )
             NavigationRailItem(
                 selected = isSelected,
-                onClick = {
-                    if (!isSearchItem && !isHomeHoldItem) {
-                        onItemClick(screen, currentIsSelected)
-                    }
-                    // Long presses are handled via InteractionSource
-                },
+                onClick = onNavigationClick,
                 interactionSource = interactionSource,
                 icon = {
                     Icon(
@@ -289,7 +263,7 @@ private fun AppNavContent(
         )
 
         Row(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().selectableGroup(),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -298,7 +272,6 @@ private fun AppNavContent(
                     remember(currentRoute, screen.route) {
                         isRouteSelected(currentRoute, screen.route, navigationItems)
                     }
-                val currentIsSelected by rememberUpdatedState(isSelected)
                 val iconRes =
                     remember(isSelected, screen) {
                         if (isSelected) screen.iconIdActive else screen.iconIdInactive
@@ -306,33 +279,12 @@ private fun AppNavContent(
 
                 val isSearchItem = screen == Screens.Search && onSearchLongClick != null
                 val isHomeHoldItem = screen == Screens.Home && onHomeLongHold != null
-                val interactionSource = remember { MutableInteractionSource() }
-
-                if (isSearchItem || isHomeHoldItem) {
-                    LaunchedEffect(interactionSource) {
-                        var isLongClick = false
-                        interactionSource.interactions.collectLatest { interaction ->
-                            when (interaction) {
-                                is PressInteraction.Press -> {
-                                    isLongClick = false
-                                    delay(if (isHomeHoldItem) 15_000L else viewConfiguration.longPressTimeoutMillis)
-                                    isLongClick = true
-                                    haptics.performHapticFeedback(HapticFeedbackType.LongPress)
-                                    if (isHomeHoldItem) onHomeLongHold.invoke() else onSearchLongClick?.invoke()
-                                }
-                                is PressInteraction.Release -> {
-                                    if (!isLongClick) {
-                                        onItemClick(screen, currentIsSelected)
-                                    }
-                                }
-                                is PressInteraction.Cancel -> {
-                                    isLongClick = false
-                                }
-                            }
-                        }
-                    }
-                }
-
+                val (interactionSource, onNavigationClick) = rememberNavigationClick(
+                    onClick = { onItemClick(screen, isSelected) },
+                    onLongClick = if (isHomeHoldItem) onHomeLongHold else if (isSearchItem) onSearchLongClick else null,
+                    longPressTimeoutMillis = if (isHomeHoldItem) 15_000L else viewConfiguration.longPressTimeoutMillis,
+                    haptics = haptics,
+                )
                 val contentColor =
                     if (isSelected) {
                         MaterialTheme.colorScheme.primary
@@ -347,14 +299,13 @@ private fun AppNavContent(
                             .weight(1f)
                             .fillMaxHeight()
                             .clip(RoundedCornerShape(32.dp))
-                            .clickable(
+                            .selectable(
+                                selected = isSelected,
+                                role = Role.Tab,
                                 interactionSource = interactionSource,
                                 indication = ripple(bounded = true),
-                            ) {
-                                if (!isSearchItem && !isHomeHoldItem) {
-                                    onItemClick(screen, currentIsSelected)
-                                }
-                            },
+                                onClick = onNavigationClick,
+                            ),
                 ) {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
@@ -379,4 +330,46 @@ private fun AppNavContent(
             }
         }
     }
+}
+
+/** Normal clicks (including accessibility actions) must not depend on pointer releases. */
+@Composable
+private fun rememberNavigationClick(
+    onClick: () -> Unit,
+    onLongClick: (() -> Unit)?,
+    longPressTimeoutMillis: Long,
+    haptics: HapticFeedback,
+): Pair<MutableInteractionSource, () -> Unit> {
+    val interactionSource = remember { MutableInteractionSource() }
+    val pressState = remember { NavigationPressState() }
+    val latestOnClick by rememberUpdatedState(onClick)
+    val latestOnLongClick by rememberUpdatedState(onLongClick)
+    LaunchedEffect(interactionSource, longPressTimeoutMillis, onLongClick != null) {
+        if (onLongClick == null) return@LaunchedEffect
+        interactionSource.interactions.collectLatest { interaction ->
+            when (interaction) {
+                is PressInteraction.Press -> {
+                    pressState.longPressTriggered = false
+                    delay(longPressTimeoutMillis)
+                    pressState.longPressTriggered = true
+                    haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                    latestOnLongClick?.invoke()
+                }
+                is PressInteraction.Cancel -> pressState.longPressTriggered = false
+                // clickable/selectable owns click dispatch; Release only cancels the timer.
+                is PressInteraction.Release -> Unit
+            }
+        }
+    }
+    val click = remember {
+        {
+            if (!pressState.longPressTriggered) latestOnClick()
+            pressState.longPressTriggered = false
+        }
+    }
+    return interactionSource to click
+}
+
+private class NavigationPressState {
+    var longPressTriggered = false
 }
