@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/mixify-icon.png" alt="Mixify app icon" width="190" />
+<img src="assets/promotional/hero.jpg" alt="Mixify — Listen. Discover. Enjoy. Open-source music for Android" width="100%" />
 
 # Mixify
 
@@ -70,9 +70,9 @@ It brings together music playback, smart lyrics, offline listening, playlist man
     <th align="center">Music Player</th>
   </tr>
   <tr>
-    <td align="center"><img src="assets/screenshots/home.png" alt="Mixify Home" width="220" /></td>
-    <td align="center"><img src="assets/screenshots/search.png" alt="Mixify Search" width="220" /></td>
-    <td align="center"><img src="assets/screenshots/player.png" alt="Mixify Player" width="220" /></td>
+    <td align="center"><img src="assets/promotional/home.jpg" alt="Mixify Home" width="220" /></td>
+    <td align="center"><img src="assets/promotional/search.jpg" alt="Mixify Search" width="220" /></td>
+    <td align="center"><img src="assets/promotional/player.jpg" alt="Mixify Player" width="220" /></td>
   </tr>
   <tr>
     <th align="center">Smart Lyrics</th>
@@ -80,9 +80,9 @@ It brings together music playback, smart lyrics, offline listening, playlist man
     <th align="center">Personalized Mix</th>
   </tr>
   <tr>
-    <td align="center"><img src="assets/screenshots/lyrics.png" alt="Mixify Lyrics" width="220" /></td>
-    <td align="center"><img src="assets/screenshots/queue.png" alt="Mixify Queue" width="220" /></td>
-    <td align="center"><img src="assets/screenshots/mix.png" alt="Mixify Mix" width="220" /></td>
+    <td align="center"><img src="assets/promotional/lyrics.jpg" alt="Mixify Lyrics" width="220" /></td>
+    <td align="center"><img src="assets/promotional/queue.jpg" alt="Mixify Queue" width="220" /></td>
+    <td align="center"><img src="assets/promotional/mix.jpg" alt="Mixify Mix" width="220" /></td>
   </tr>
 </table>
 
@@ -94,16 +94,16 @@ It brings together music playback, smart lyrics, offline listening, playlist man
     <th align="center">Custom Lock Screen</th>
   </tr>
   <tr>
-    <td align="center"><img src="assets/screenshots/listen-together.jpg" alt="Mixify Listen Together" width="265" /></td>
-    <td align="center"><img src="assets/screenshots/custom-lock-screen.jpg" alt="Mixify Custom Lock Screen with Synced Lyrics" width="265" /></td>
+    <td align="center"><img src="assets/promotional/listen-together.jpg" alt="Mixify Listen Together" width="265" /></td>
+    <td align="center"><img src="assets/promotional/lock-screen.jpg" alt="Mixify Custom Lock Screen with Synced Lyrics" width="265" /></td>
   </tr>
   <tr>
     <th align="center">Song Share Card</th>
     <th align="center">Lyrics Share Card</th>
   </tr>
   <tr>
-    <td align="center"><img src="assets/screenshots/song-share-card.jpg" alt="Mixify Song Share Card" width="265" /></td>
-    <td align="center"><img src="assets/screenshots/lyrics-share-card.jpg" alt="Mixify Lyrics Share Card" width="265" /></td>
+    <td align="center"><img src="assets/promotional/song-share-card.jpg" alt="Mixify Song Share Card" width="265" /></td>
+    <td align="center"><img src="assets/promotional/lyrics-share-card.jpg" alt="Mixify Lyrics Share Card" width="265" /></td>
   </tr>
 </table>
 
