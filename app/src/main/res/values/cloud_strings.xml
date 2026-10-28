@@ -1,0 +1,5 @@
+<resources>
+    <string name="usage_analytics">Usage analytics</string>
+    <string name="share_usage_analytics">Share basic usage analytics</string>
+    <string name="share_usage_analytics_description">Help count app users and sessions using Google Analytics for Firebase. No song names, searches, or account credentials are sent by Mixify. Turn off to stop collection and reset the local analytics identifier.</string>
+</resources>

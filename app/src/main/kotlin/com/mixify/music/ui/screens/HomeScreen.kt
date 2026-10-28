@@ -667,6 +667,7 @@ fun HomeScreen(
     snackbarHostState: SnackbarHostState,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
+    val remoteSettings by com.mixify.music.cloud.AppCloud.settings.collectAsStateWithLifecycle()
     val navController = LocalNavController.current
     val menuState = LocalMenuState.current
     val bottomSheetPageState = LocalBottomSheetPageState.current
@@ -1113,10 +1114,21 @@ fun HomeScreen(
                     bottom = insets.calculateBottomPadding() + 96.dp
                 ),
             ) {
+                if (remoteSettings.announcementEnabled && remoteSettings.announcementText.isNotBlank()) {
+                    item(key = "remote_announcement") {
+                        Card(modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp)) {
+                            Text(
+                                text = remoteSettings.announcementText,
+                                style = MaterialTheme.typography.bodyLarge,
+                                modifier = Modifier.padding(16.dp),
+                            )
+                        }
+                    }
+                }
                 item(key = "home_greeting") {
                     val greeting = remember { cheerfulGreeting() }
                     Text(
-                        text = greeting,
+                        text = remoteSettings.homeTitle.ifBlank { greeting },
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),

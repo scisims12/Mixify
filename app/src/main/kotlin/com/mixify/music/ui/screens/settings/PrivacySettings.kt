@@ -50,6 +50,14 @@ import com.mixify.music.utils.rememberPreference
 fun PrivacySettings(
     navController: NavController
 ) {
+    val cloudContext = androidx.compose.ui.platform.LocalContext.current
+    var analyticsEnabled by remember {
+        mutableStateOf(com.mixify.music.cloud.AppCloud.isAnalyticsEnabled(cloudContext))
+    }
+    val updateAnalytics: (Boolean) -> Unit = { enabled ->
+        com.mixify.music.cloud.AppCloud.setAnalyticsEnabled(cloudContext, enabled)
+        analyticsEnabled = enabled
+    }
     val database = LocalDatabase.current
     val (pauseListenHistory, onPauseListenHistoryChange) = rememberPreference(
         key = PauseListenHistoryKey,
@@ -152,6 +160,23 @@ fun PrivacySettings(
             )
         )
 
+        if (com.mixify.music.cloud.AppCloud.available) {
+            Material3SettingsGroup(
+                title = stringResource(R.string.usage_analytics),
+                items = listOf(
+                    Material3SettingsItem(
+                        icon = painterResource(R.drawable.history),
+                        title = { Text(stringResource(R.string.share_usage_analytics)) },
+                        description = { Text(stringResource(R.string.share_usage_analytics_description)) },
+                        trailingContent = {
+                            Switch(checked = analyticsEnabled, onCheckedChange = updateAnalytics)
+                        },
+                        onClick = { updateAnalytics(!analyticsEnabled) },
+                    ),
+                ),
+            )
+            Spacer(modifier = Modifier.height(27.dp))
+        }
         Material3SettingsGroup(
             title = stringResource(R.string.listen_history),
             items = listOf(

@@ -102,6 +102,15 @@ android {
         }
     }
 
+    sourceSets {
+        listOf("gms", "gmsFull").forEach { flavor ->
+            getByName(flavor) {
+                kotlin.directories += "src/cloud/kotlin"
+            }
+            maybeCreate("${flavor}Release").res.directories += "src/cloudRelease/res"
+        }
+    }
+
     signingConfigs {
         create("persistentDebug") {
             storeFile = persistentDebugKeystoreFile
@@ -264,6 +273,12 @@ configurations.configureEach {
 }
 
 dependencies {
+    // Keep proprietary SDKs out of the Izzy/F-Droid flavor.
+    listOf("gmsImplementation", "gmsFullImplementation").forEach { configuration ->
+        add(configuration, platform("com.google.firebase:firebase-bom:35.1.0"))
+        add(configuration, "com.google.firebase:firebase-analytics")
+        add(configuration, "com.google.firebase:firebase-config")
+    }
     implementation(libs.liquid.glass)
     implementation(libs.guava)
     implementation(libs.coroutines.guava)

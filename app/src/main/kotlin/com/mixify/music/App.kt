@@ -79,6 +79,7 @@ class App :
         // Install crash handler first
         CrashHandler.install(this)
         ArtistNameAliases.initialize(this)
+        com.mixify.music.cloud.AppCloud.initialize(this)
 
         // preferencesDataStore uses filesDir/datastore; proactive mkdir reduces failures on odd ROM states
         try {
