@@ -105,9 +105,9 @@ android {
     sourceSets {
         listOf("gms", "gmsFull").forEach { flavor ->
             getByName(flavor) {
-                java.srcDir("src/cloud/kotlin")
+                kotlin.directories += "src/cloud/kotlin"
             }
-            maybeCreate("${flavor}Release").res.srcDir("src/cloudRelease/res")
+            maybeCreate("${flavor}Release").res.directories += "src/cloudRelease/res"
         }
     }
 
