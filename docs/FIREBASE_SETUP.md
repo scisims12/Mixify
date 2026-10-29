@@ -9,7 +9,8 @@ configuration or collect analytics. Firebase dependencies are GMS-only.
 The supplied Android client configuration is represented by
 `app/src/cloudRelease/res/values/firebase_config.xml` (the standard resource
 values normally emitted by the Google Services plugin). Both GMS release source
-sets include that directory. No service-account key or admin credential is used.
+sets include that directory. The API key is generated as a release-only resource
+from `FIREBASE_API_KEY`, not stored in this XML file. No service-account key or admin credential is used.
 Do not add a second Google Services plugin/config generator without removing
 these resources, or it will generate duplicate resources. For a new application
 ID, register a separate Firebase Android app and replace the release resources;
@@ -85,3 +86,48 @@ processing. Update store data disclosures as appropriate before distributing.
 Local compilation in the authoring environment was blocked before compilation
 by restricted network access to the Gradle distribution. Device/console checks
 must still be completed; no live analytics data or successful APK build is claimed.
+
+## API-key setup and secret-scanning alert
+
+### Android Studio
+
+1. Add `FIREBASE_API_KEY=YOUR_FIREBASE_CLIENT_API_KEY` to the root
+   `local.properties` (already ignored by Git). Keep the existing `sdk.dir`.
+2. Sync Gradle and build a GMS release. Do not paste the value into Kotlin,
+   XML, Gradle source, issues, or chat. Do not commit `local.properties`.
+3. Test Remote Config and Analytics on the registered production package.
+   Debug, PR and Izzy builds still do not initialize production Firebase.
+
+### GitHub Actions
+
+In repository Settings → Secrets and variables → Actions, add the repository
+secret `FIREBASE_API_KEY` using the same Firebase client key. The release,
+nightly and quick-build workflows pass it to Gradle. Compilation checks and
+fork PRs can run without it; missing configuration disables cloud services.
+Before publishing a production APK, verify the secret is configured and test
+Analytics and Remote Config. A missing key must not be mistaken for a successful
+Firebase integration.
+
+### Review the exposed key before resolving the alert
+
+Moving a key out of source does not remove it from old commits or existing APKs.
+Firebase client keys remain extractable from built apps. They identify a project;
+they do not authorize database access. Review the key in Google Cloud → APIs &
+Services → Credentials and restrict it to the required Firebase APIs. Never
+allow Generative Language API or unrelated billable APIs on this client key.
+Test restrictions before changing a production key. Use separate keys for
+non-Firebase APIs, and enforce Security Rules/App Check for applicable products.
+
+If the exposed key has inappropriate access or suspected misuse, replace it,
+update local.properties and the Actions secret, test and distribute the new app,
+then revoke the old key with an explicit migration plan for installed versions.
+Do not revoke a production key blindly: older APKs still contain it.
+
+The old GitHub alert does not disappear when this patch is merged. After
+verifying Firebase-only restrictions, resolve it as **Used in tests** only for an
+actual test key; for an intentionally public, correctly restricted Firebase
+client key choose **Won't fix** and explain that decision. Choose **Revoked**
+only after actual revocation. Do not label a real key as a false positive merely
+because it was moved. No history rewrite is required by this patch.
+
+Reference: https://firebase.google.com/docs/projects/api-keys

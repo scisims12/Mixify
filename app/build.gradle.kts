@@ -227,6 +227,24 @@ android {
     }
 }
 
+
+androidComponents {
+    onVariants(selector().withBuildType("release")) { variant ->
+        if (variant.productFlavors.any { it.second == "gms" || it.second == "gmsFull" }) {
+            val firebaseApiKey = localProperties.getProperty("FIREBASE_API_KEY")
+                ?.trim()?.takeIf { it.isNotEmpty() }
+                ?: System.getenv("FIREBASE_API_KEY")?.trim().orEmpty()
+            require(firebaseApiKey.isEmpty() || firebaseApiKey.matches(Regex("[A-Za-z0-9_-]+"))) {
+                "FIREBASE_API_KEY contains invalid characters"
+            }
+            variant.resValues.put(
+                variant.makeResValueKey("string", "google_api_key"),
+                com.android.build.api.variant.ResValue(firebaseApiKey, "Supplied at build time"),
+            )
+        }
+    }
+}
+
 protobuf {
     protoc {
         artifact = "com.google.protobuf:protoc:${libs.versions.protobuf.get()}"

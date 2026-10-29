@@ -1,6 +1,7 @@
 package com.mixify.music.cloud
 
 import android.content.Context
+import com.google.firebase.FirebaseOptions
 import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.remoteconfig.ConfigUpdate
@@ -27,6 +28,11 @@ object AppCloud {
         if (BuildConfig.DEBUG || context.packageName != "com.mixify.app" || remoteConfig != null) return
         runCatching {
             // Resources are scoped to GMS release, so debug/Izzy need no Firebase registration.
+            val options = FirebaseOptions.fromResource(context)
+            if (options == null || options.apiKey.isBlank()) {
+                Timber.w("Firebase client configuration missing; cloud services disabled")
+                return
+            }
             if (FirebaseApp.initializeApp(context) == null) return
             analytics = FirebaseAnalytics.getInstance(context).also {
                 it.setAnalyticsCollectionEnabled(isAnalyticsEnabled(context))
